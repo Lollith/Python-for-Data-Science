@@ -8,6 +8,11 @@ if len(sys.argv) < 1:
 try:	
 	if len(sys.argv) > 1:
 		raise AssertionError("More than one argument is provided")
+
+
+	if...._
+		raise ....
+		
 except AssertionError as error:
 	print("error")
 	sys.exit(1)
