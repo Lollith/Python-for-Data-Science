@@ -7,7 +7,7 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 try:
-    try:	
+    try:
         if len(sys.argv) > 2:
             raise AssertionError(": more than one argument is provided")
 
