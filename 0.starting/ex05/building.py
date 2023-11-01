@@ -2,7 +2,7 @@
 of its upper-case characters, lower-case characters, punctuation characters, 
 digits and spaces """
 
-# use exception
+
 import sys
 
 
