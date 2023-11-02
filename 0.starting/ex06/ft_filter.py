@@ -13,35 +13,35 @@ if __name__ == "__main__":
             return True
         return False
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-strings = ["apple", "banana", "cherry", "date", "elderberry"]
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    strings = ["apple", "banana", "cherry", "date", "elderberry"]
 
-print("function None:")
-even_numbers_iterator = ft_filter(None, numbers)
-even_numbers = list(even_numbers_iterator)
-print("ft_filter:", even_numbers)
+    print("function None:")
+    even_numbers_iterator = ft_filter(None, numbers)
+    even_numbers = list(even_numbers_iterator)
+    print("ft_filter:", even_numbers)
 
-even_numbers_iterator = filter(None, numbers)
-even_numbers = list(even_numbers_iterator)
-print("filter:", even_numbers)
+    even_numbers_iterator = filter(None, numbers)
+    even_numbers = list(even_numbers_iterator)
+    print("filter:", even_numbers)
 
-print()
-print("filter: even")
-# if an element passed to check_even() returns True, select it
-even_numbers_iterator = ft_filter(check_even, numbers)
-# converting to list
-even_numbers = list(even_numbers_iterator)
-print("ft_filter:", even_numbers)
+    print()
+    print("filter: even")
+    # if an element passed to check_even() returns True, select it
+    even_numbers_iterator = ft_filter(check_even, numbers)
+    # converting to list
+    even_numbers = list(even_numbers_iterator)
+    print("ft_filter:", even_numbers)
 
-even_numbers_iterator = filter(check_even, numbers)
-even_numbers = list(even_numbers_iterator)
-print("filter:", even_numbers)
+    even_numbers_iterator = filter(check_even, numbers)
+    even_numbers = list(even_numbers_iterator)
+    print("filter:", even_numbers)
 
-print()
-print("fonction long string")
-long_strings_it = ft_filter(lambda s: len(s) > 5, strings)
-long_strings = list(long_strings_it)
-print("ft_filter:", long_strings)
-long_strings_it = filter(lambda s: len(s) > 5, strings)
-long_strings = list(long_strings_it)
-print("filter:", long_strings)
+    print()
+    print("fonction long string")
+    long_strings_it = ft_filter(lambda s: len(s) > 5, strings)
+    long_strings = list(long_strings_it)
+    print("ft_filter:", long_strings)
+    long_strings_it = filter(lambda s: len(s) > 5, strings)
+    long_strings = list(long_strings_it)
+    print("filter:", long_strings)
