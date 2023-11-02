@@ -16,23 +16,23 @@
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
-ft_dict = {"Hello" : "titi!"}
+ft_dict = {"Hello": "titi!"}
 
-#your code here
- # list : modifiable
+# your code here
+# list : modifiable
 ft_list[1] = "World!"
 
-#tuple : non modifiable
+# tuple : non modifiable
 new_tuple = ("Hello",)
-ft_tuple = new_tuple +(("France!"),)
+ft_tuple = new_tuple + (("France!"),)
 
-#pas d ordre et pas dindex => list pour etre dans le bon ordre
+# pas d ordre et pas dindex => list pour etre dans le bon ordre
 ft_set.discard("tutu!")
 ft_set.add('Paris!')
 # ft_set = list(ft_set)
 # ft_set.sort()
 
- #modifiable
+# modifiable
 ft_dict["Hello"] = "42Paris!"
 
 print(ft_list)
