@@ -13,7 +13,7 @@ def ft_tqdm(lst: range) -> None:
         bar = "=" * int(bar_lengh * progress) + ">"
         espaces = ' ' * (bar_lengh - len(bar))
         sys.stdout.write(f"\r{int(progress * 100)}%|[{bar}{espaces}]|\
-                         {i + 1}/{total}) ")  # \r permet de revenir a la ligne  pour recommencer a 0 => donne l impression d evoluer
-        sys.stdout.flush()  # force l ecriture immediate ds la sortie standard, sans les maj pourraient etre stockee ds le tampon et ne s afficher quapres un delai
+                         {i + 1}/{total})")  # \r permet de revenir a la ligne
+        sys.stdout.flush()  # force l ecriture ds la sortie standard
         yield item
     sys.stdout.write("\n")

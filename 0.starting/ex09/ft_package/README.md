@@ -1,0 +1,7 @@
+- cd ft_package
+- python3 -m build
+- pip list
+- pip show -v ft_package
+- cd .. 
+- pip install ./ft_package/dist/ft_package-0.0.1.tar.gz
+- python test.py
