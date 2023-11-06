@@ -3,10 +3,14 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
     """Take 2 lists of intergers or floats in input and returns a list of BMI
     values."""
     try:
+        for i in height:
+            if not isinstance(i, float) or isinstance(i, int):
+                raise TypeError("not int/float")
+
         if (len(height) != len(weight)):
             raise AssertionError("Not same Size")
     except AssertionError as error:
-        print(AssertionError.__name__,":", error)
+        print(AssertionError.__name__, ":", error)
     else:
         return [w / h ** 2 for w, h in zip(weight, height)]
 
@@ -38,3 +42,6 @@ if __name__ == "__main__":
 
     print()
     print("Not int/float")
+    height = ["ade", "coucou"]
+    weight = [1.2, 2.2]
+    bmi = give_bmi(height, weight)
