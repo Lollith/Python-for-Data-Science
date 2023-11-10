@@ -19,8 +19,8 @@ def ft_load(path: str):
         print(PermissionError.__name__, error)
     else:
         image = cv2.imread(path)
-        cv2.imshow("landscape", image)
-        print("The shape of the image is: ", image.shape)
+        cv2.imshow("image", image)
+        print("The shape of the image is: ", image.shape[:2])
         cv2.waitKey(0)
         cv2.destroyAllWindows()
         return image

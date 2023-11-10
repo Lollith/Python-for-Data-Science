@@ -21,9 +21,10 @@ def ft_load(path: str):
         image = cv2.imread(path)
         cv2.imshow("landscape", image)
         print("The shape of the image is: ", image.shape)
+        im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        return image
+        return im_rgb
 
 
 if __name__ == "__main__":
