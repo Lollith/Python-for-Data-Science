@@ -1,5 +1,7 @@
-'''program that should load the image "animal.jpeg", print some information
-about it and display it after "zooming"'''
+''' program which must load the image "animal.jpeg", cut a square part from it
+and transpose it to produce the image below. It should display it, print the
+new shape and the data of the image after the transpose.'''
+
 
 from load_image import ft_load
 from matplotlib import pyplot as plt
@@ -15,7 +17,6 @@ def main():
     plt.savefig('slice_image.jpeg')
     print(slice_image)
     plt.show()
-
 
 if __name__ == "__main__":
     main()
