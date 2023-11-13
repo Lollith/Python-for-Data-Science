@@ -11,6 +11,7 @@ import numpy as np
 
 
 def ft_transpose(array):
+    """transpose a 2D array"""
     (height, width) = array.shape[:2]
     # creer un tableau vide avec les meme dimensions et meme typeque l original
     transposed_array = np.empty_like(array)
