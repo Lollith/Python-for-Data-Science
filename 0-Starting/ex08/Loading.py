@@ -6,7 +6,7 @@ import sys
 
 
 def ft_tqdm(lst: range) -> None:
-    total = len(lst) 
+    total = len(lst)
     for i, item in enumerate(lst):
         progress = (i + 1) / total
         bar_lengh = 145

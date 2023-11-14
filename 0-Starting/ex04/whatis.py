@@ -14,7 +14,7 @@ try:
         int(sys.argv[1])  # si pas un int va return une erreur
 
     except ValueError:  # si pas un int
-        raise AssertionError("argument is not an integer")
+        raise AssertionError(": argument is not an integer")
 
 except AssertionError as error:
     print(AssertionError.__name__, error)

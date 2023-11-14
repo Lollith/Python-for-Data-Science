@@ -1,5 +1,5 @@
-"""program that accepts two arguments: a string(S), and an integer(N). 
-The program should output a list of words from S that have a length greater 
+"""program that accepts two arguments: a string(S), and an integer(N).
+The program should output a list of words from S that have a length greater
 than N."""
 
 import sys

@@ -1,5 +1,5 @@
-""" Autonomous program, witch takes a single string arg and displays the sums 
-of its upper-case characters, lower-case characters, punctuation characters, 
+""" Autonomous program, witch takes a single string arg and displays the sums
+of its upper-case characters, lower-case characters, punctuation characters,
 digits and spaces """
 
 
@@ -16,12 +16,14 @@ def main():
         "digits": 0,
     }
     try:
-        if len(sys.argv) != 2:
-            raise AssertionError("What is the text to count?")
+        if len(sys.argv) > 2:
+            raise AssertionError(": more than one argument is provided")
     except AssertionError as error:
-        print(error)
-        sentence = "Hello World! "
-        print(sentence)
+        print(AssertionError.__name__, error, sep="")
+        sys.exit(1)
+
+    if len(sys.argv) != 2:
+        sentence = input("What is the text to count?\n")
     else:
         sentence = sys.argv[1]
     print(f"The text contains {len(sentence)} characters:")

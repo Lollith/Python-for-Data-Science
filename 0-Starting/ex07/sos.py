@@ -16,7 +16,7 @@ def main():
     morce_list = []
     try:
         if len(sys.argv) != 2:
-            raise AssertionError("the arguments are bad")   
+            raise AssertionError("the arguments are bad")
         is_valid = all((c.isalnum() or c.isspace()) and c.isprintable()
                        for c in sys.argv[1])
         if not is_valid:

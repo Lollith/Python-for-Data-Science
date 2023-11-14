@@ -14,10 +14,11 @@ def NULL_not_found(input_object: any) -> int:
     type_object = type(input_object)
     if (input_object and type_object != float):
         print("Type not found")
+        return 1
     else:
         object_zero = my_objects_zero.get(type_object)
         if object_zero is None:
             print(f"Nothing: {input_object} {type_object}")
         else:
             print(f"{object_zero}: {input_object} {type_object}")
-    return 1
+        return 0
