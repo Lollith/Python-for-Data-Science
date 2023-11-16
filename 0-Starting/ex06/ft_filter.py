@@ -1,12 +1,24 @@
+# list comprehension : parcourir une liste  en renvoyant une seconde  liste
+#  modifiee ou filtree
+# [valueur_de_retour for i in list_origine]
+
 def ft_filter(function, iterable):
-    """Return an iterator yielding those items of iterable for which function
-    (item) is true. If function is None, return the items that are true."""
+    """filter(function or None, iterable) --> filter object
+
+Return an iterator yielding those items of iterable for which function(item)
+is true. If function is None, return the items that are true."""
     if function:
-        return (item for item in iterable if function(item))
-    return (item for item in iterable)
+        return ([item for item in iterable if function(item)])
+    return ([item for item in iterable])
 
 
 if __name__ == "__main__":
+
+    original = filter.__doc__
+    copy = ft_filter.__doc__
+    print(copy)  # output: docstring
+    print(original == copy)  # output: True
+    print()
 
     def check_even(number):
         if number % 2 == 0:
