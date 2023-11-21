@@ -16,8 +16,8 @@ def ft_transpose(array):
     # creer un tableau vide avec les meme dimensions et meme typeque l original
     transposed_array = np.empty_like(array)
     for h in range(height):
-     for w in range(weight):
-        transposed_array[w, h] = array[h, w]
+        for w in range(weight):
+            transposed_array[w, h] = array[h, w]
     # reconfigurer la disposition des éléments du tableau pour refléter une
     # structure bidimensionnelle avec les dimensions spécifiées.
     transposed_array = transposed_array.reshape(weight, height)

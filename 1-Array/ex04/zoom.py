@@ -2,7 +2,7 @@
 about it and display it after "zooming"'''
 # Matplotlib convertit le tableau Numpy en une représentation interne
 # propre à Matplotlib pour l'affichage. => sauvegarder avec cv2 pour avoir
-    # le format np; attention channel fantomes avec cv2 => va en afficher 3
+# le format np; attention channel fantomes avec cv2 => va en afficher 3
 
 from load_image import ft_load
 from matplotlib import pyplot as plt

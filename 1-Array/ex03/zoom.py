@@ -19,7 +19,7 @@ def main():
         print(f"{slice_image.shape} or {slice_image.shape[:2]}")
         plt.savefig('slice_image.jpeg')
         print(slice_image)
-        plt.show() # affiche sous forme de plt, avec l echelle de plt
+        plt.show()  # affiche sous forme de plt, avec l echelle de plt
 
 
 if __name__ == "__main__":
