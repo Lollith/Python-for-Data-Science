@@ -11,19 +11,22 @@ def slice_me(family: list, start: int, end: int) -> list:
     except TypeError as error:
         print(TypeError.__name__, ":", error)
     else:
-
         try:
             arr = np.array(family)
         except ValueError as error:
             print(ValueError.__name__, ":", error)
         else:
             print(f"My shape is: {arr.shape}")
-            print(f"My new shape is: {np.array(family[start:end]).shape}")
-            return family[start:end]
+            new_list = family[start:end]
+            print(f"My new shape is: {np.array(new_list).shape}")
+            return new_list
 
 
 if __name__ == "__main__":
-    family = [[1.80, 78.4], [2.15, 102.7], [2.10, 98.5], [1.88, 75.2]]
+    family = [[1.80, 78.4], 
+              [2.15, 102.7], 
+              [2.10, 98.5], 
+              [1.88, 75.2]]
     print(slice_me(family, 0, 2))
     print(slice_me(family, 1, -2))
     print()

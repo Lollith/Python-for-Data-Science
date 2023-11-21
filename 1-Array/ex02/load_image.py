@@ -1,7 +1,8 @@
 
 import cv2
 import os
-# opencv
+# conda install opencv
+# conda install -c conda-forge libstdcxx-ng
 # BGR != RBG pillow
 
 
@@ -18,8 +19,8 @@ def ft_load(path: str):
     except PermissionError as error:
         print(PermissionError.__name__, error)
     else:
-        image = cv2.imread(path)
-        cv2.imshow("landscape", image)
+        image = cv2.imread(path)  # load
+        cv2.imshow("landscape", image)  # display
         print("The shape of the image is: ", image.shape)
         im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         cv2.waitKey(0)
@@ -28,11 +29,19 @@ def ft_load(path: str):
 
 
 if __name__ == "__main__":
+    # chmod 000 landscape_denied.jpeg
+    print(".jpg")
     print(ft_load("landscape.jpg"))
     print()
+    print(".png")
     print(ft_load("landscape.png"))
+    print()
+    print(".jpeg")
+    print(ft_load("landscape.jpeg"))
 
     print()
+    print("not exist")
     print(ft_load("landscape"))
     print()
+    print("permision")
     print(ft_load("landscape_denied.jpeg"))

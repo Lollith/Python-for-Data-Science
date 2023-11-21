@@ -8,6 +8,8 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
                 if not isinstance(h, (float, int)) \
                         or not isinstance(w, (int, float)):
                     raise TypeError()
+                if h < 0 or w < 0:
+                    raise AssertionError("negative value")
 
             for h in height:
                 if h == 0:
@@ -76,8 +78,8 @@ if __name__ == "__main__":
     weight = [1.3, 2.2]
     bmi = give_bmi(height, weight)
     print()
-    
-    print("value -1")
+
+    print("negative value")
     height = [2.71, 1.15]
     weight = [-165, 38.4]
     bmi = give_bmi(height, weight)
