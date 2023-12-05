@@ -1,4 +1,5 @@
 from S1E9 import Character
+# rq: preferer utiliser super() plutot que la classe mere
 
 
 class Baratheon(Character):

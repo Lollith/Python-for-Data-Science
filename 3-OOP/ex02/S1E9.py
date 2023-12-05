@@ -23,7 +23,7 @@ class Stark(Character):
     def __init__(self, first_name: str, is_alive: bool = True):
         '''Initializes a Stark character with 2 arguments, first_name and \
 is_alive.'''
-        Character.__init__(self, first_name, is_alive)
+        super().__init__(first_name, is_alive)
 
     def die(self):
         '''Changes health state of the caracter.'''

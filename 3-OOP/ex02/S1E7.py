@@ -8,7 +8,7 @@ class Baratheon(Character):
         '''Initializes a charracter with 2 arguments,first_name and \
             is_alive, allow to instantiate without going through the Character\
                 class.'''
-        Character.__init__(self, first_name, is_alive)
+        super().__init__(first_name, is_alive)
         self.family_name = "Baratheon"
         self.eyes = "brown"
         self.hairs = "dark"
@@ -34,7 +34,7 @@ class Lannister(Character):
         '''Initializes a charracter with 2 arguments,first_name and \
             is_alive, allow to instantiate without going through the Character\
                 class.'''
-        Character.__init__(self, first_name, is_alive)
+        super().__init__(first_name, is_alive)
         self.family_name = "Lannister"
         self.eyes = "blue"
         self.hairs = "light"
