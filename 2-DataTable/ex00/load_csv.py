@@ -1,5 +1,7 @@
 import pandas as pd
 
+# conda install -c conda-forge libstdcxx-ng
+
 
 def load(path: str) -> pd.DataFrame:
     '''takes a path as argument, writes the dimensions of the data set

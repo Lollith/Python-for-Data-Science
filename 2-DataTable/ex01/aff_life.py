@@ -9,7 +9,7 @@ your campus"""
 def main():
     try:
         mydata = load("life_expectancy_years.csv")
-        print(mydata)
+        # print(mydata)
     except FileNotFoundError as e:
         print(FileNotFoundError.__name__, e, sep=": ")
     else:
@@ -17,7 +17,7 @@ def main():
             # obtenir un format long, pratique pour faire un graph : MELT
             mydata_long = mydata.melt(id_vars=["country"], var_name="Year",
                                       value_name="Life Expectancy")
-            # print(mydata_long)
+            print(mydata_long)
         except AttributeError as er:
             print(AttributeError.__name__, er, sep=": ")
         else:

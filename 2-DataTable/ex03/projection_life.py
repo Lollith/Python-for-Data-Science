@@ -2,6 +2,7 @@ from load_csv import load
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+# merging = jointure, se fait a partir d'une clef commune;
 
 """program that loads the 2 given files and displays the projection of life
 expectancy in relation to the gross national product of the year 1900 for each
@@ -12,6 +13,8 @@ country."""
 
 
 def clean_value(x):
+    '''Cleanse the values of the dataframe (M, K and B)) and return them as
+    integers'''
     if not x:
         return 0
 
@@ -34,6 +37,7 @@ def data_melt(data_to_melt: pd.DataFrame, value: str):
 
 
 def display_scatterplot(df_1900: pd.DataFrame):
+    '''Create, set and display the scatterplot'''
     mylineplot = sns.scatterplot(data=df_1900, x='gpd', y='life')
     mylineplot.set_xlabel("Gross domestic product")
     mylineplot.set_ylabel("Life Expectancy")
@@ -52,20 +56,23 @@ def main():
     except FileNotFoundError as e:
         print(FileNotFoundError.__name__, e, sep=": ")
     else:
-        gpd_melted = data_melt(gpd_data, "gpd")
-        life_melted = data_melt(life_data, "life")
+        try:
+            gpd_melted = data_melt(gpd_data, "gpd")
+            life_melted = data_melt(life_data, "life")
+        except AttributeError as er:
+            print(AttributeError.__name__, er, sep=": ")
+        else:
+            # str for clean_value => float
+            gpd_melted["gpd"] = gpd_melted["gpd"].astype(str)
+            gpd_melted["gpd"] = gpd_melted["gpd"].apply(clean_value)
+            life_melted["life"] = life_melted["life"].astype(float)
 
-        # str for clean_value => float
-        gpd_melted["gpd"] = gpd_melted["gpd"].astype(str)
-        gpd_melted["gpd"] = gpd_melted["gpd"].apply(clean_value)
-        life_melted["life"] = life_melted["life"].astype(float)
+            gpd_merged = gpd_melted.merge(life_melted)
+            # print(gpd_merged)
+            df_1900 = gpd_merged.loc[gpd_merged["year"] == "1900"]
+            # print(df_1900.drop(columns='year'))
 
-        gpd_merged = gpd_melted.merge(life_melted)
-        # print(gpd_merged)
-        df_1900 = gpd_merged.loc[gpd_merged["year"] == "1900"]
-        # print(df_1900.drop(columns='year'))
-
-        display_scatterplot(df_1900)
+            display_scatterplot(df_1900)
 
 
 if __name__ == "__main__":

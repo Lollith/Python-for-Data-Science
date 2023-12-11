@@ -4,12 +4,16 @@ import matplotlib.pyplot as plt
 # pip install --force-reinstall
 # https://github.com/mwaskom/seaborn/archive/refs/heads/master.tar.gz
 # seaborn==0.14.0.dev0
+# Transpose is used here, but Melt is a better choice.
+
 
 """program that load the good file and displays the country information of
 your campus"""
 
 
 def clean_value(x):
+    '''Cleanse the values of the dataframe (M, K and B)) and return them as
+    integers'''
     if not x:
         return 0
 
@@ -30,18 +34,15 @@ def main():
         print(FileNotFoundError.__name__, e, sep=": ")
     else:
         try:
-            # set index permet d enlever les index sinon passe comme colonnes
+            # set_index :enlever les index sinon passe comme colonnes
             mydata_transposed = mydata.set_index("country").T
-            # print(mydata_transposed)
         except AttributeError as er:
             print(AttributeError.__name__, er, sep=": ")
         else:
             mydata_transposed = mydata_transposed.map(clean_value)
-            # print(mydata_transposed)
-            # print(mydata_transposed.index)
             mylineplot = sns.lineplot(data=mydata_transposed,
                                       x=mydata_transposed.index, y="Belgium")
-            # print(mydata_transposed["France"])
+            print(mydata_transposed["France"])
             mylineplot = sns.lineplot(data=mydata_transposed,
                                       x=mydata_transposed.index, y="France")
             mylineplot.set_xlabel("Year")
