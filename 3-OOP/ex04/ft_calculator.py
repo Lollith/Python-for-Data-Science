@@ -4,6 +4,7 @@ class Calculator:
 
     @classmethod
     def dotproduct(cls, V1: list[float], V2: list[float]) -> None:
+        '''dotproduct of 2 vectors'''
         try:
             if (len(V1) == len(V2)):
                 print(sum([i * j for i, j in zip(V1, V2)]))
@@ -14,6 +15,7 @@ class Calculator:
 
     @classmethod
     def add_vec(cls, V1: list[float], V2: list[float]) -> None:
+        '''addition of 2 vectors'''
         try:
             if (len(V1) == len(V2)):
                 print([float(i + j) for i, j in zip(V1, V2)])
@@ -24,6 +26,7 @@ class Calculator:
 
     @classmethod
     def sous_vec(cls, V1: list[float], V2: list[float]) -> None:
+        '''substraction of 2 vectors'''
         try:
             if (len(V1) == len(V2)):
                 print([float(i - j) for i, j in zip(V1, V2)])
