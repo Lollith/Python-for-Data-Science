@@ -1,5 +1,5 @@
 class calculator:
-    ''' calculator class ables to do calculations: addition, multiplication,\
+    ''' calculator class ables to do calculations: addition, multiplication,
         substraction and division of vector with a scalar'''
 
     def __init__(self, my_object):
